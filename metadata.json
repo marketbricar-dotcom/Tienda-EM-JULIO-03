@@ -1,0 +1,10 @@
+{
+  "name": "EM TIENDA ONLINE  ",
+  "description": "Sistema de gestión de inventario y ventas con diseño estético, sincronización en la nube y manejo multimoneda.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EM Tienda Cute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #FAF5FF; /* Purple 50 */
+      }
+      /* Cute Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #E9D5FF; /* Purple 200 */
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #D8B4FE; /* Purple 300 */
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.4s ease-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                dark: '#7C3AED',      // Violet 600 (Header - Soft Violet)
+                primary: '#C084FC',   // Purple 400 (Primary Action - Lilac)
+                primaryHover: '#A855F7', // Purple 500
+                secondary: '#8B5CF6', // Violet 500
+                text: '#4B5563',      // Gray 700 (Soft Gray Text)
+                bg: '#FAF5FF',        // Purple 50 (App Bg - Very light lilac)
+                surface: '#FFFFFF',   // White
+                border: '#E9D5FF',    // Purple 200
+                yellow: '#FDE047',    // Yellow 300 (Pastel Yellow)
+                mint: '#6EE7B7',      // Emerald 300 (Mint)
+                pink: '#F9A8D4'       // Pink 300
+              }
+            },
+            borderRadius: {
+              'xl': '1rem',
+              '2xl': '1.5rem',
+              '3xl': '2rem',
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Script de seguridad para errores globales -->
+    <script>
+      window.addEventListener('error', function(event) {
+        const root = document.getElementById('root');
+        if (root && root.innerText.includes('Cargando')) {
+          root.innerHTML = `
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh; padding:20px; text-align:center; color:#7C3AED;">
+              <h2 style="font-size:1.5rem; font-weight:bold; margin-bottom:10px;">¡Ups! Algo salió mal 🤕</h2>
+              <p style="color:#666;">No pudimos cargar la tienda.</p>
+              <pre style="background:#f3f4f6; padding:10px; border-radius:10px; font-size:0.8rem; margin-top:20px; overflow:auto; max-width:100%; text-align:left; color:red;">${event.message}</pre>
+            </div>
+          `;
+        }
+      });
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "jspdf": "https://aistudiocdn.com/jspdf@^3.0.4",
+    "jspdf-autotable": "https://aistudiocdn.com/jspdf-autotable@^5.0.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root">
+      <div style="display: flex; justify-content: center; align-items: center; height: 100vh; color: #7C3AED; font-family: sans-serif; font-weight: bold; flex-direction: column; gap: 10px;">
+        <div style="font-size: 2rem;">✨</div>
+        <div>Cargando Tienda...</div>
+      </div>
+    </div>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
